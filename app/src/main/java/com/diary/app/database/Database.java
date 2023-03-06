@@ -1,3 +1,6 @@
+/* Student name: Gavin McCarthy
+ * Student id: 19237766
+ */
 package com.diary.app.database;
 import android.content.ContentValues;
 import android.content.Context;

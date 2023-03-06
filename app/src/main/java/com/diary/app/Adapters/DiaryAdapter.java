@@ -1,3 +1,6 @@
+/* Student name: Gavin McCarthy
+ * Student id: 19237766
+ */
 package com.diary.app.Adapters;
 
 import android.annotation.SuppressLint;
