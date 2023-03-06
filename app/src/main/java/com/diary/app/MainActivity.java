@@ -5,6 +5,7 @@ package com.diary.app;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -17,7 +18,7 @@ import com.diary.app.database.Database;
 public class MainActivity extends AppCompatActivity {
     EditText editTextInputText
             ,editTextInputDate;
-    Button buttonSubmit;
+    Button buttonSubmit,buttonShowAllEntries;
     Database database;
 
 
@@ -33,6 +34,13 @@ public class MainActivity extends AppCompatActivity {
         editTextInputText=findViewById(R.id.editTextInputText);
         editTextInputDate=findViewById(R.id.editTextInputDate);
         buttonSubmit=findViewById(R.id.buttonSubmit);
+        buttonShowAllEntries=findViewById(R.id.buttonShowAllEntries);
+        buttonShowAllEntries.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,DiaryEntries.class));
+            }
+        });
         buttonSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -43,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
     private void addEntry() {
         DiaryModel diaryModel=new DiaryModel();
         diaryModel.setText(editTextInputText.getText().toString());
-        diaryModel.setText(editTextInputDate.getText().toString());
+        diaryModel.setDate(editTextInputDate.getText().toString());
         if(diaryModel.getText().equals("")){
             Toast.makeText(this, getString(R.string.text), Toast.LENGTH_SHORT).show();
         }else if(diaryModel.getDate().equals("")){
@@ -51,6 +59,8 @@ public class MainActivity extends AppCompatActivity {
         }else {
            database.insertDiary(diaryModel);
             Toast.makeText(this, getString(R.string.successful), Toast.LENGTH_SHORT).show();
+          editTextInputDate.setText("");
+          editTextInputText.setText("");
         }
     }
 }

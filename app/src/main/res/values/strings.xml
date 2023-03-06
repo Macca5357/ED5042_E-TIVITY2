@@ -7,4 +7,7 @@
     <string name="text_required">Diary text required </string>
     <string name="date_required">Date required</string>
     <string name="successful">Successful</string>
+    <string name="nothing_found">Database is empty</string>
+    <string name="all_entries">All entries in database</string>
+    <string name="show_all">Show all entries</string>
 </resources>
