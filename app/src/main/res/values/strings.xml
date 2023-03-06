@@ -4,5 +4,7 @@
     <string name="text">Text</string>
     <string name="date">Date</string>
     <string name="submit">Submit</string>
-
+    <string name="text_required">Diary text required </string>
+    <string name="date_required">Date required</string>
+    <string name="successful">Successful</string>
 </resources>
