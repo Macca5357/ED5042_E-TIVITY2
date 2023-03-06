@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">DiaryApp</string>
+    <string name="app_name">Diary App</string>
+    <string name="add_new">Add New Entry</string>
+    <string name="text">Text</string>
+    <string name="date">Date</string>
+    <string name="submit">Submit</string>
+
 </resources>
